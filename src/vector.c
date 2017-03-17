@@ -5,7 +5,7 @@
 ** Login   <thomas.arbona@epitech.eu>
 **
 ** Started on  Mon Feb 27 19:47:52 2017 Thomas ARBONA
-** Last update Mon Mar 13 23:15:28 2017 Thomas ARBONA
+** Last update Fri Mar 17 09:58:06 2017 Thomas ARBONA
 */
 #include <unistd.h>
 #include <stdlib.h>
@@ -54,15 +54,21 @@ void	vector_sort(t_vector *vector, int (*cmp)(void*, void*))
 {
   void	*item;
   int	index;
+  int	index2;
 
   index = 0;
   while (index < vector->size - 1)
     {
-      if (cmp(vector->items[index], vector->items[index + 1]))
+      index2 = index;
+      while (index2 < vector->size - 1)
 	{
-	  item = vector->items[index];
-	  vector->items[index] = vector->items[index + 1];
-	  vector->items[index + 1] = item;
+	  if (cmp(vector->items[index2], vector->items[index2 + 1]))
+	    {
+	      item = vector->items[index2];
+	      vector->items[index2] = vector->items[index2 + 1];
+	      vector->items[index2 + 1] = item;
+	    }
+	  index2 += 1;
 	}
       index += 1;
     }

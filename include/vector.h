@@ -30,8 +30,8 @@ void	_vector_push(t_vector*, void*);
 
 # define VECTOR_INIT_CAPACITY	8
 
-# define vector_set(v, i, item)	_vector_set(v, i, (void*)item);
-# define vector_get(v, i, type)	(type*)_vector_get(v, i);
-# define vector_push(v, item)	_vector_push(v, (void*)item);
+# define vector_set(v, i, item)	_vector_set(v, i, (void*)item)
+# define vector_get(v, i, type)	(type*)_vector_get(v, i)
+# define vector_push(v, item)	_vector_push(v, (void*)item)
 
 #endif /* !VECTOR_H_ */

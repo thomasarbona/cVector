@@ -5,7 +5,7 @@
 ** Login   <thomas.arbona@epitech.eu>
 **
 ** Started on  Mon Feb 27 19:47:52 2017 Thomas ARBONA
-** Last update Fri Mar 17 09:58:06 2017 Thomas ARBONA
+** Last update Sat Apr 22 21:10:50 2017 Thomas ARBONA
 */
 #include <unistd.h>
 #include <stdlib.h>
@@ -36,6 +36,7 @@ int	vector_resize(t_vector *vector, int capacity)
   vector_destroy(vector);
   vector->items = items;
   vector->capacity = capacity;
+  return (0);
 }
 
 void	vector_foreach(t_vector *vector, void (*func)(void*, int))

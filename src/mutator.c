@@ -10,12 +10,12 @@
 #include <unistd.h>
 #include "vector.h"
 
-int	vector_getsize(t_vector *vector)
+int	vector_getsize(vector_t *vector)
 {
   return (vector->size);
 }
 
-void	vector_delete(t_vector *vector, int index)
+void	vector_delete(vector_t *vector, int index)
 {
   if (index < 0 || vector->size <= index)
     return;
@@ -31,20 +31,20 @@ void	vector_delete(t_vector *vector, int index)
     vector_resize(vector, vector->capacity / 2);
 }
 
-void	_vector_set(t_vector *vector, int index, void *item)
+void	_vector_set(vector_t *vector, int index, void *item)
 {
   if (0 <= index && index < vector->size)
     vector->items[index] = item;
 }
 
-void	*_vector_get(t_vector *vector, int index)
+void	*_vector_get(vector_t *vector, int index)
 {
   if (0 <= index && index < vector->size)
     return (vector->items[index]);
   return (NULL);
 }
 
-void	_vector_push(t_vector *vector, void *item)
+void	_vector_push(vector_t *vector, void *item)
 {
   if (vector->size == vector->capacity)
     vector_resize(vector, vector->capacity * 2);

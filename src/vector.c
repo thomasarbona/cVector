@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include "vector.h"
 
-int	vector_create(t_vector *vector)
+int	vector_create(vector_t *vector)
 {
   vector->size = 0;
   vector->capacity = VECTOR_INIT_CAPACITY;
@@ -20,7 +20,7 @@ int	vector_create(t_vector *vector)
   return (0);
 }
 
-int	vector_resize(t_vector *vector, int capacity)
+int	vector_resize(vector_t *vector, int capacity)
 {
   int	index;
   void	**items;
@@ -39,7 +39,7 @@ int	vector_resize(t_vector *vector, int capacity)
   return (0);
 }
 
-void	vector_foreach(t_vector *vector, void (*func)(void*, int))
+void	vector_foreach(vector_t *vector, void (*func)(void*, int))
 {
   int	index;
 
@@ -51,7 +51,7 @@ void	vector_foreach(t_vector *vector, void (*func)(void*, int))
     }
 }
 
-void	vector_sort(t_vector *vector, int (*cmp)(void*, void*))
+void	vector_sort(vector_t *vector, int (*cmp)(void*, void*))
 {
   void	*item;
   int	index;
@@ -75,7 +75,7 @@ void	vector_sort(t_vector *vector, int (*cmp)(void*, void*))
     }
 }
 
-void	vector_destroy(t_vector *vector)
+void	vector_destroy(vector_t *vector)
 {
   free(vector->items);
 }

@@ -10,23 +10,22 @@
 #ifndef VECTOR_H_
 # define VECTOR_H_
 
-typedef struct	s_vector
-{
-  void		**items;
-  int		capacity;
-  int		size;
-}		t_vector;
+typedef struct {
+  void **items;
+  int capacity;
+  int size;
+}	vector_t;
 
-int	vector_create(t_vector*);
-void	vector_destroy(t_vector*);
-int	vector_resize(t_vector*, int);
-int	vector_getsize(t_vector*);
-void	vector_delete(t_vector*, int);
-void	vector_foreach(t_vector*, void (*)(void*, int));
-void	vector_sort(t_vector*, int (*)(void*, void*));
-void	_vector_set(t_vector*, int, void*);
-void	*_vector_get(t_vector*, int);
-void	_vector_push(t_vector*, void*);
+int	vector_create(vector_t*);
+void	vector_destroy(vector_t*);
+int	vector_resize(vector_t*, int);
+int	vector_getsize(vector_t*);
+void	vector_delete(vector_t*, int);
+void	vector_foreach(vector_t*, void (*)(void*, int));
+void	vector_sort(vector_t*, int (*)(void*, void*));
+void	_vector_set(vector_t*, int, void*);
+void	*_vector_get(vector_t*, int);
+void	_vector_push(vector_t*, void*);
 
 # define VECTOR_INIT_CAPACITY	8
 

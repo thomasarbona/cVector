@@ -5,7 +5,7 @@
 ## Login   <thomas.arbona@epitech.eu>
 ## 
 ## Started on  Mon Feb 27 19:41:55 2017 Thomas ARBONA
-## Last update Mon Mar 13 23:22:28 2017 Thomas ARBONA
+## Last update Sat Apr 22 21:10:16 2017 Thomas ARBONA
 ##
 
 SRC	=	src/vector.c	\
@@ -16,7 +16,7 @@ OBJ	=	$(SRC:.c=.o)
 NAME	=	libvector.a
 HNAME	=	vector.h
 
-CFLAGS	=	-I./include
+CFLAGS	=	-I./include -W -Wall -Wextra
 
 all:		$(NAME)
 

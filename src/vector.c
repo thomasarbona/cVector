@@ -4,14 +4,14 @@
 ** Made by Thomas ARBONA
 ** Login   <thomas.arbona@epitech.eu>
 **
-** Started on  Mon Feb 27 19:47:52 2017 Thomas ARBONA
+** Staed on  Mon Feb 27 19:47:52 2017 Thomas ARBONA
 ** Last update Sat Apr 22 21:10:50 2017 Thomas ARBONA
 */
 #include <unistd.h>
 #include <stdlib.h>
 #include "vector.h"
 
-int	vector_create(vector_t *vector)
+int	vector_create(Vector *vector)
 {
   vector->size = 0;
   vector->capacity = VECTOR_INIT_CAPACITY;
@@ -20,7 +20,7 @@ int	vector_create(vector_t *vector)
   return (0);
 }
 
-int	vector_resize(vector_t *vector, int capacity)
+int	vector_resize(Vector *vector, int capacity)
 {
   int	index;
   void	**items;
@@ -39,7 +39,7 @@ int	vector_resize(vector_t *vector, int capacity)
   return (0);
 }
 
-void	vector_foreach(vector_t *vector, void (*func)(void*, int))
+void	vector_foreach(Vector *vector, void (*func)(void*, int))
 {
   int	index;
 
@@ -51,7 +51,7 @@ void	vector_foreach(vector_t *vector, void (*func)(void*, int))
     }
 }
 
-void	vector_sort(vector_t *vector, int (*cmp)(void*, void*))
+void	vector_so(Vector *vector, int (*cmp)(void*, void*))
 {
   void	*item;
   int	index;
@@ -75,7 +75,7 @@ void	vector_sort(vector_t *vector, int (*cmp)(void*, void*))
     }
 }
 
-void	vector_destroy(vector_t *vector)
+void	vector_destroy(Vector *vector)
 {
   free(vector->items);
 }

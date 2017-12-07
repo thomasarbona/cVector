@@ -4,28 +4,28 @@
 ** Made by Thomas ARBONA
 ** Login   <thomas.arbona@epitech.eu>
 **
-** Started on  Mon Feb 27 19:44:11 2017 Thomas ARBONA
+** Staed on  Mon Feb 27 19:44:11 2017 Thomas ARBONA
 ** Last update Mon Mar 13 23:14:36 2017 Thomas ARBONA
 */
 #ifndef VECTOR_H_
 # define VECTOR_H_
 
-typedef struct {
+typedef struct Vector {
   void **items;
   int capacity;
   int size;
-}	vector_t;
+}	Vector;
 
-int	vector_create(vector_t*);
-void	vector_destroy(vector_t*);
-int	vector_resize(vector_t*, int);
-int	vector_getsize(vector_t*);
-void	vector_delete(vector_t*, int);
-void	vector_foreach(vector_t*, void (*)(void*, int));
-void	vector_sort(vector_t*, int (*)(void*, void*));
-void	_vector_set(vector_t*, int, void*);
-void	*_vector_get(vector_t*, int);
-void	_vector_push(vector_t*, void*);
+int	vector_create(Vector*);
+void vector_destroy(Vector*);
+int	vector_resize(Vector*, int);
+int	vector_getsize(const Vector*);
+void vector_delete(Vector*, int);
+void vector_foreach(Vector*, void (*)(void*, int));
+void vector_so(Vector*, int (*)(void*, void*));
+void _vector_set(Vector*, int, void*);
+void *_vector_get(const Vector*, int);
+void _vector_push(Vector*, void*);
 
 # define VECTOR_INIT_CAPACITY	8
 

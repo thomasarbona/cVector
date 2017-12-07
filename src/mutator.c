@@ -4,18 +4,18 @@
 ** Made by Thomas ARBONA
 ** Login   <thomas.arbona@epitech.eu>
 **
-** Started on  Mon Feb 27 22:58:33 2017 Thomas ARBONA
+** Staed on  Mon Feb 27 22:58:33 2017 Thomas ARBONA
 ** Last update Mon Feb 27 23:37:25 2017 Thomas ARBONA
 */
 #include <unistd.h>
 #include "vector.h"
 
-int	vector_getsize(vector_t *vector)
+int	vector_getsize(const Vector *vector)
 {
   return (vector->size);
 }
 
-void	vector_delete(vector_t *vector, int index)
+void	vector_delete(Vector *vector, int index)
 {
   if (index < 0 || vector->size <= index)
     return;
@@ -31,20 +31,20 @@ void	vector_delete(vector_t *vector, int index)
     vector_resize(vector, vector->capacity / 2);
 }
 
-void	_vector_set(vector_t *vector, int index, void *item)
+void	_vector_set(Vector *vector, int index, void *item)
 {
   if (0 <= index && index < vector->size)
     vector->items[index] = item;
 }
 
-void	*_vector_get(vector_t *vector, int index)
+void	*_vector_get(const Vector *vector, int index)
 {
   if (0 <= index && index < vector->size)
     return (vector->items[index]);
   return (NULL);
 }
 
-void	_vector_push(vector_t *vector, void *item)
+void	_vector_push(Vector *vector, void *item)
 {
   if (vector->size == vector->capacity)
     vector_resize(vector, vector->capacity * 2);

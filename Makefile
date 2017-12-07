@@ -4,7 +4,7 @@
 ## Made by Thomas ARBONA
 ## Login   <thomas.arbona@epitech.eu>
 ## 
-## Started on  Mon Feb 27 19:41:55 2017 Thomas ARBONA
+## Staed on  Mon Feb 27 19:41:55 2017 Thomas ARBONA
 ## Last update Sat Apr 22 21:10:16 2017 Thomas ARBONA
 ##
 

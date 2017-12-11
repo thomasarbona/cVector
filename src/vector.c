@@ -39,18 +39,6 @@ int	vector_resize(Vector *vector, int capacity)
   return (0);
 }
 
-void	vector_foreach(Vector *vector, void (*func)(void*, int))
-{
-  int	index;
-
-  index = 0;
-  while (index < vector->size)
-    {
-      func(vector->items[index], index);
-      index += 1;
-    }
-}
-
 void	vector_so(Vector *vector, int (*cmp)(void*, void*))
 {
   void	*item;

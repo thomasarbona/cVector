@@ -21,7 +21,6 @@ void vector_destroy(Vector*);
 int	vector_resize(Vector*, int);
 int	vector_getsize(const Vector*);
 void vector_delete(Vector*, int);
-void vector_foreach(Vector*, void (*)(void*, int));
 void vector_so(Vector*, int (*)(void*, void*));
 void _vector_set(Vector*, int, void*);
 void *_vector_get(const Vector*, int);
@@ -32,5 +31,6 @@ void _vector_push(Vector*, void*);
 # define vector_set(v, i, item)	_vector_set(v, i, (void*)item)
 # define vector_get(v, i, type)	(type*)_vector_get(v, i)
 # define vector_push(v, item)	_vector_push(v, (void*)item)
+# define vector_foreach(v, type, func) for (int it = 0; it < v->size; it += 1) func(v->items[it], it);
 
 #endif /* !VECTOR_H_ */

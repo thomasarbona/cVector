@@ -31,6 +31,6 @@ void _vector_push(Vector*, void*);
 # define vector_set(v, i, item)	_vector_set(v, i, (void*)item)
 # define vector_get(v, i, type)	(type*)_vector_get(v, i)
 # define vector_push(v, item)	_vector_push(v, (void*)item)
-# define vector_foreach(v, type, func) for (int it = 0; it < v->size; it += 1) func(v->items[it], it);
+# define vector_foreach(v, type, func) for (int it = 0; it < v->size; it += 1) func((type)v->items[it], it);
 
 #endif /* !VECTOR_H_ */
